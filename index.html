@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- Ensures the page scales properly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome for cart icon -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Amazon</title>
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ---------------------------------------------------
+     HEADER SECTION (Logo + Search Bar + Cart Icon)
+---------------------------------------------------- -->
+<header class="header">
+
+    <!-- Amazon text logo -->
+    <div class="logo">
+        <img src="images/download (1).png" alt="Amazon Logo">
+    </div>
+
+    <!-- SEARCH BAR (center) -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search mobiles...">
+        <button id="searchBtn">🔍</button>
+    </div>
+
+    <!-- CART ICON + COUNTER BADGE -->
+    <div class="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cartCount">0</span>
+    </div>
+
+</header>
+
+<!-- ---------------------------------------------------
+     MAIN LAYOUT (Sidebar Filter + Products Grid)
+---------------------------------------------------- -->
+<div class="container">
+
+    <!-- LEFT FILTER SIDEBAR -->
+    <aside class="filter-box">
+        <h3>Price</h3>
+
+        <!-- Radio inputs for selecting price range -->
+        <div class="filter-options">
+            <label><input type="radio" name="price" value="0-1000"> Under ₹1,000</label>
+            <label><input type="radio" name="price" value="1000-5000"> ₹1,000 – ₹5,000</label>
+            <label><input type="radio" name="price" value="5000-10000"> ₹5,000 – ₹10,000</label>
+            <label><input type="radio" name="price" value="10000-20000"> ₹10,000 – ₹20,000</label>
+            <label><input type="radio" name="price" value="20000-999999"> Over ₹20,000</label>
+
+            <!-- Default option -->
+            <label><input type="radio" name="price" value="all" checked> All</label>
+        </div>
+    </aside>
+
+    <!-- PRODUCT GRID (Cards will be added via JavaScript) -->
+    <section id="productGrid" class="product-grid"></section>
+
+</div>
+
+<!-- External JavaScript file controlling search, filter, and cart -->
+<script src="script.js"></script>
+
+</body>
+</html>
