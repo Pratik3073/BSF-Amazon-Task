@@ -6,12 +6,19 @@ export function setupSearch() {
     const input = document.getElementById("searchInput");
     const btn = document.getElementById("searchBtn");
 
+    // If input or button is missing, stop safely
+    if (!input || !btn) return;
+
     function searchProducts() {
-        const q = input.value.toLowerCase();
-        const result = products.filter(p => p?.name?.toLowerCase()?.includes(q));
-        displayProducts(result);
+        const q = input?.value?.toLowerCase?.() ?? "";
+
+        const result = products?.filter(p =>
+            p?.name?.toLowerCase?.()?.includes(q)
+        ) ?? [];
+
+        displayProducts?.(result);
     }
 
-    input.addEventListener("input", searchProducts);
-    btn.addEventListener("click", searchProducts);
+    input?.addEventListener?.("input", searchProducts);
+    btn?.addEventListener?.("click", searchProducts);
 }
